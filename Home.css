@@ -46,3 +46,134 @@ nav div ul li a:hover {
     background: #ffffff72 ;
     border-radius: 10px ;
 }
+
+
+/* MAIN CONTENT */
+main {
+    flex: 1;
+}
+
+.hero-section {
+    background: #f8de8c; 
+    
+    /* Mengambil tinggi minimal 100% dari viewport height */
+    height: 100vh; 
+
+    margin: 0;
+    overflow: hidden;
+    
+    /* Menggunakan Flexbox untuk menengahkan konten utama */
+    display: flex; 
+    flex-direction: column; /* Konten disusun vertikal */
+    
+    /* Agar konten teks memiliki ruang di tepi */
+    padding: 20px 5%; 
+    
+    /* Untuk menempatkan elemen ilustrasi (jika posisinya absolut) */
+    position: relative; 
+    
+    /* Mengatur properti background image jika ilustrasi ditempatkan di sini */
+    /* background-image: url('assets/Masjid.png'); 
+    background-size: cover; 
+    background-position: center bottom; */
+}
+
+.hero-shading {
+    position: absolute; /* Posisikan secara bebas terhadap .hero-section */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* Menjadikan ilustrasi transparan dan di belakang teks */
+    z-index: 6; /* Pastikan di bawah .hero-content */
+    
+    /* Mengatur background image yang berisi ilustrasi */
+    background-image: url('assets/Shading.png'); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center bottom; /* Fokus di bagian bawah dan tengah */
+    transform: translateX(0px) ;
+}
+
+.hero-img {
+    background-image: url(assets/Masjid.png);
+    position: absolute; 
+    bottom: 0;
+    right: 0;
+    width: 1090px;
+    max-width: 100%;
+    height: 600px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 5;
+    transform: translateX(195px);
+    background-position: right bottom;
+}
+
+.hero-content {
+    /* Memberi jarak atas dan bawah untuk konten utama */
+    padding-top: 100px; 
+    padding-bottom: 50px;
+    
+    /* Membatasi lebar teks agar tidak terlalu memanjang */
+    max-width: 700px; 
+    
+    /* Agar teks dan ikon panah berada di lapisan atas (di atas ilustrasi) */
+    position: relative; 
+    z-index: 10; 
+}
+
+.hero-content h1 {
+    font-size: 3rem; /* Ukuran judul besar */
+    font-weight: 700;
+    color: rgb(0, 0, 0); /* Warna judul */
+    opacity: 0;
+    white-space: nowrap;
+    transform: translateY(300px);
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-top: 20px;
+    /* Opasitas sedikit untuk kontras */
+    color: rgba(0, 0, 0, 0.9);
+    opacity: 0;
+    transform: translateY(100px);
+}
+
+.hero-content a {
+    font-size:larger !important;
+    font-weight: 700;
+    color: rgb(0, 0, 0) !important;
+    background-color: rgba(254, 254, 254, 0.2) !important;
+    border-color: #00000000 !important;
+    opacity: 0;
+    transform: translateY(105px) translateX(165px);
+}
+
+.hero-visual {
+    background-image: url(assets/Keris1.png);
+    position: absolute; 
+    bottom: 0;
+    right: 0;
+    width: 567px;
+    height: 662px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 4;
+    transform: translateX(-200px) translateY(-165px);
+}
+
+footer {
+    position: absolute;
+    height: 30px;
+    width: 100%;
+    bottom: 0px !important;
+    line-height: 30px;
+    background: rgba(0, 0, 0, 0.4) !important;
+    align-items: center !important;
+    background-position: bottom;
+    z-index: 9999;
+}
