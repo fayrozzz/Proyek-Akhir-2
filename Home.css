@@ -21,6 +21,7 @@ body {
     display: flex ;
     object-fit: contain ;
     vertical-align: middle ;
+    align-items: center;
 }
 
 /* NAVBAR */
