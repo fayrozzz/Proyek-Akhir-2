@@ -94,6 +94,8 @@ main {
     background-repeat: no-repeat;
     background-position: center bottom; /* Fokus di bagian bawah dan tengah */
     transform: translateX(0px) ;
+    animation: slideLeftToRight 1s ease-out 0.1s forwards; 
+    opacity: 0; /* Mulai dengan tersembunyi */
 }
 
 .hero-img {
@@ -109,6 +111,8 @@ main {
     z-index: 5;
     transform: translateX(195px);
     background-position: right bottom;
+    animation: slideRightToLeft 1s ease-out 0.5s forwards; 
+    opacity: 0;
 }
 
 .hero-content {
@@ -131,6 +135,7 @@ main {
     opacity: 0;
     white-space: nowrap;
     transform: translateY(300px);
+    animation: slideBottomToTop 1s ease-out 0.5s forwards;
 }
 
 .hero-content p {
@@ -141,6 +146,7 @@ main {
     color: rgba(0, 0, 0, 0.9);
     opacity: 0;
     transform: translateY(100px);
+    animation: slideBottomToTop 1s ease-out 0.5s forwards;
 }
 
 .hero-content a {
@@ -151,6 +157,7 @@ main {
     border-color: #00000000 !important;
     opacity: 0;
     transform: translateY(105px) translateX(165px);
+    animation: fadeIn 1s ease-out 1.0s forwards;
 }
 
 .hero-visual {
@@ -164,6 +171,91 @@ main {
     background-repeat: no-repeat;
     z-index: 4;
     transform: translateX(-200px) translateY(-165px);
+    animation: slideTopToBottom 1s ease-out 0.5s forwards; 
+    opacity: 0;
+}
+
+/* KEY FRAME ANIMASI */
+/* Animasi Masjid (Kanan ke Kiri) */
+@keyframes slideRightToLeft {
+    0% {
+        /* Mulai dari luar viewport di kanan */
+        transform: translateX(100%); 
+        opacity: 0;
+    }
+    100% {
+        /* Bergerak ke posisi akhir yang sudah didefinisikan di .hero-img */
+        transform: translateX(195px); /* Sesuaikan dengan nilai di .hero-img */
+        opacity: 1;
+    }
+}
+
+/* Animasi Shading (Kiri ke Kanan) */
+@keyframes slideLeftToRight {
+    0% {
+        /* Mulai dari luar viewport di kiri */
+        transform: translateX(-100%); 
+        opacity: 0;
+    }
+    100% {
+        /* Bergerak ke posisi akhir (0) */
+        transform: translateX(0px); /* Sesuaikan dengan nilai di .hero-shading */
+        opacity: 1;
+    }
+}
+
+/* Animasi Keris (Atas ke Bawah) */
+@keyframes slideTopToBottom {
+    0% {
+        /* Mulai dari luar viewport di atas */
+        transform: translateY(-100%) translateX(-25%); 
+        opacity: 0;
+    }
+    100% {
+        /* Bergerak ke posisi akhir yang sudah didefinisikan di .hero-visual */
+        transform: translateX(-200px) translateY(-165px); /* Sesuaikan dengan nilai di .hero-visual */
+        opacity: 1;
+    }
+}
+
+/* h1 */
+@keyframes slideBottomToTop {
+    0% {
+        /* Mulai dari luar viewport di atas */
+        transform: translateY(300px); 
+        opacity: 0;
+    }
+    100% {
+        /* Bergerak ke posisi akhir yang sudah didefinisikan di .hero-visual */
+        transform: translateX(0px) translateY(100px); /* Sesuaikan dengan nilai di .hero-visual */
+        opacity: 1;
+    }
+}
+
+/* p */
+@keyframes slideBottomToTop {
+    0% {
+        /* Mulai dari luar viewport di atas */
+        transform: translateY(300px); 
+        opacity: 0;
+    }
+    100% {
+        /* Bergerak ke posisi akhir yang sudah didefinisikan di .hero-visual */
+        transform: translateX(0px) translateY(100px); /* Sesuaikan dengan nilai di .hero-visual */
+        opacity: 1;
+    }
+}
+
+/* a */
+@keyframes fadeIn {
+    0% {
+        /* Status awal: tidak terlihat sama sekali */
+        opacity: 0;
+    }
+    100% {
+        /* Status akhir: terlihat sepenuhnya */
+        opacity: 1;
+    }
 }
 
 footer {
