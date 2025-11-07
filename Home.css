@@ -178,6 +178,64 @@ main {
     opacity: 0;
 }
 
+/* PENGATURAN UNTUK STENAGH LAYAR */
+@media  (max-width: 991px) {
+    .hero-section {
+        flex-direction: column;
+        padding: 20px;
+        heoght: auto;
+        min-height: 100vh;
+    }
+
+    .hero-content {
+        max-width: 100%;
+        padding-top: 50px;
+        padding-bottom: 20px;
+        z-index: 20;
+        text-align: center;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+        white-space: normal;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .hero-shading,
+    .hero-img,
+    .hero-visual {
+        /* Posisikan ilustrasi agar tidak mengganggu atau sembunyikan */
+        position: relative; /* Ganti dari absolute agar mengambil ruang */
+        height: 300px; /* Beri tinggi tetap */
+        width: 100%;
+        /* Atur ulang background position agar fokus di bawah */
+        background-position: center bottom !important; 
+        /* Matikan animasi di mobile agar lebih cepat loading/tidak berantakan */
+        animation: none !important; 
+        opacity: 1 !important;
+        transform: none !important;
+    }
+
+    .hero-visual {
+        display: none;
+    }
+
+    .hero-content a {
+        transform: none !important;
+        margin-top: 15px;
+    }
+
+    @keyframe slideBottomToTop {
+        100% {
+            transform: translateY(0px)
+            opacity: 1;
+        }
+    }
+}
+
 footer {
     position: absolute;
     height: 30px;
