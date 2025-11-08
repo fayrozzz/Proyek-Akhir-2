@@ -44,7 +44,7 @@ nav div ul li a {
     margin-right: 10px ;
     border-radius: 50px ;
     color: #000000 !important;
-    transform: translateX(140px);
+    transform: translateX(150px);
 
 }
 
@@ -218,6 +218,7 @@ main {
         margin-right: 0;
         padding: 8px 15px;
         text-align: left;
+        transform: translateX(0px);
     }
 
     .navbar-nav:last-child {
@@ -358,3 +359,46 @@ footer {
         opacity: 1;
     }
 }
+
+/* SETTINGAN UNTUK POP UP LOGI DAN SIGN UP */
+.popup {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  z-index: 99999;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  background: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  animation: popupFade 0.4s ease;
+}
+
+@keyframes popupFade {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Efek blur untuk body */
+.blur {
+  filter: blur(6px);
+  pointer-events: none;
+  user-select: none;
+}
+
+
