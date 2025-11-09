@@ -6,7 +6,7 @@
     <title>LokalSumenep.id</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="Home.css">
+    <link rel="stylesheet" href="Home2.css">
 </head>
 
 <body>
@@ -32,10 +32,10 @@
             <li class="nav-item"><a class="nav-link" href="Contact.html">Contact</a></li>
           </ul>
           <!-- Navbar Button Right -->
-          <ul class="navbar-nav mx-auto">
-            <li class="nav-item"><a class="nav-link" href="Login.html">Login</a></li>
-            <li class="nav-item"><a class="nav-link" href="Sign up.html">Sign up</a></li>
-          </ul>
+          <div class="username-pill d-flex align-items-center">
+            <span>Username</span>
+            <img src="assets/Profil.png" alt="User Icon">
+          </div>
       </div>
     </div>
 </nav>
@@ -61,43 +61,6 @@
   <p>© 2025 LokalSumenep.id</p>
 </footer>
 
-<!-- POPUP LOGIN -->
-<div class="popup" id="popup-login">
-  <div class="popup-content">
-    <h2>Login</h2>
-    <p>Selamat datang kembali di LokalSumenep.id!
-      jelajahi dan promosikan produk lokal kebanggan Madura!
-    </p>
-    <button class="btn btn-light w-100 d-flex align-items-center justify-content-center gap-2 mb-3" style="border: 1px solid #ddd;">
-      <img src="assets/google.png" alt="Google logo" style="width: 20px;">
-      Login with Google
-    </button>
-    <p>Or</p>
-    <input type="text" placeholder="Username" class="form-control mb-2">
-    <input type="password" placeholder="Password" class="form-control mb-3">
-    <button class="btn btn-primary w-100 mb-2">Masuk</button>
-    <button class="btn btn-secondary w-100 close-popup">Tutup</button>
-  </div>
-</div>
-
-<!-- POPUP SIGNUP -->
-<div class="popup" id="popup-signup">
-  <div class="popup-content">
-    <h2>Sign Up</h2>
-    <button class="btn btn-light w-100 d-flex align-items-center justify-content-center gap-2 mb-3" style="border: 1px solid #ddd;">
-      <img src="assets/google.png" alt="Google logo" style="width: 20px;">
-      Login with Google
-    </button>
-    <p>Or</p>
-    <input type="text" placeholder="Username" class="form-control mb-2">
-    <input type="email" placeholder="Email" class="form-control mb-2">
-    <input type="password" placeholder="Password" class="form-control mb-3">
-    <button class="btn btn-success w-100 mb-2">Daftar</button>
-    <button class="btn btn-secondary w-100 close-popup">Tutup</button>
-  </div>
-</div>
-
-<script src="Home.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>

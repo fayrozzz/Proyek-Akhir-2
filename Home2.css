@@ -44,7 +44,7 @@ nav div ul li a {
     margin-right: 10px ;
     border-radius: 50px ;
     color: #000000 !important;
-    transform: translateX(150px);
+    transform: translateX(-25px);
 
 }
 
@@ -192,6 +192,25 @@ main {
 
 .hero-shading, .hero-img, .hero-visual {
     pointer-events: none;
+}
+
+.username-pill {
+    color: #000000;
+  background-color: rgba(255, 255, 255, 0.305);
+  padding: 6px 14px;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.username-pill img {
+  width: 28px;
+  margin-left: 10px;
+}
+
+.username-pill:hover {
+  background-color: rgba(255, 255, 255, 0.566); /* Putih agak transparan saat hover */
 }
 
 
@@ -364,111 +383,5 @@ footer {
     }
 }
 
-/* SETTINGAN UNTUK POP UP LOGI DAN SIGN UP */
-.popup {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(8px);
-  z-index: 99999;
-  justify-content: center;
-  align-items: center;
-}
-
-.popup-content {
-  background: #fff;
-  padding: 30px;
-  border-radius: 15px;
-  text-align: center;
-  width: 90%;
-  max-width: 400px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-  animation: popupFade 0.4s ease;
-}
-
-.popup-content h2 {
-    font-size: 2rem;
-    white-space: normal;
-    color: #000000;
-}
-
-.popup-content p {
-    font-size: 0.8rem;
-    color: #000000;
-    position: relative;
-    transform: translateY(10px);
-}
-
-.input-with-icon {
-  position: relative;
-  display: flex;
-  align-items: center;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  padding: 8px 12px;
-  background: #fff;
-}
-
-.input-with-icon img {
-  width: 20px;
-  height: 20px;
-  margin-right: 8px;
-}
-
-.input-with-icon input {
-  border: none;
-  outline: none;
-  flex: 1;
-  background: transparent;
-  font-size: 15px;
-}
-
-.popup-content .btn-primary {
-    color: #000000;
-    background-color: #587042;
-    border-color: #00000000;
-}
-
-.popup-content .btn-success {
-    color: #000000;
-    background-color: #587042;
-    border-color: #00000000;
-}
-
-.popup-content .btn-primary:hover {
-    color: rgb(0, 0, 0);
-    background: #8ba273 !important;
-}
-.popup-content .btn-success:hover {
-    color: rgb(0, 0, 0);
-    background: #8ba273 !important;
-}
-.popup-content .btn-secondary:hover {
-    color: rgb(0, 0, 0);
-    background: #9b9b9b !important;
-}
-
-.popup-content .btn-secondary {
-    color: #000000;
-    border-color: #00000000;
-}
-@keyframes popupFade {
-  from {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-/* Efek blur untuk body */
-.blur {
-  filter: blur(6px);
-  pointer-events: none;
-  user-select: none;
-}
 
 
