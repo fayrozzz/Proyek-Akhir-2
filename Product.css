@@ -1,0 +1,387 @@
+body {
+    height: 100%;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    color: rgb(207, 207, 207);
+    transition: background-color 0.3s, color 0.3s;
+    overflow-x: hidden;
+}
+
+.context {
+    align-items: center !important;
+}
+/* LOGO */
+.navbar-brand img{
+    margin-top: 0;
+    margin-bottom: 0;
+    height: 50px ;
+    padding: 0px !important;
+    margin: 0 auto !important;
+    width: auto ;
+    display: flex ;
+    object-fit: contain ;
+    vertical-align: middle ;
+    align-items: center;
+}
+
+/* NAVBAR */
+.navbar {
+    background: #587042!important;
+    
+    width: 100%;
+    display: flex;
+    margin: 0 auto !important;
+    align-items: center;
+    padding: 0;
+}
+
+nav div ul li a {
+    transition: 0.10s;
+    display: inline-block;
+    margin-right: 10px ;
+    border-radius: 50px ;
+    color: #000000 !important;
+    transform: translateX(-25px);
+
+}
+
+nav div ul li a:hover {
+    background: #ffffff72 ;
+    border-radius: 10px ;
+}
+
+/* BODY */
+
+main {
+    flex: 1;
+}
+
+.hero-section {
+    background: #f8de8c; 
+    
+    /* Mengambil tinggi minimal 100% dari viewport height */
+    height: 100vh; 
+
+    margin: 0;
+    overflow: hidden;
+    
+    /* Menggunakan Flexbox untuk menengahkan konten utama */
+    display: flex; 
+    flex-direction: column; /* Konten disusun vertikal */
+    
+    /* Agar konten teks memiliki ruang di tepi */
+    padding: 20px 5%; 
+    
+    /* Untuk menempatkan elemen ilustrasi (jika posisinya absolut) */
+    position: relative; 
+    
+    /* Mengatur properti background image jika ilustrasi ditempatkan di sini */
+    /* background-image: url('assets/Masjid.png'); 
+    background-size: cover; 
+    background-position: center bottom; */
+}
+
+.hero-shading {
+    position: absolute; /* Posisikan secara bebas terhadap .hero-section */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* Menjadikan ilustrasi transparan dan di belakang teks */
+    z-index: 6; /* Pastikan di bawah .hero-content */
+    
+    /* Mengatur background image yang berisi ilustrasi */
+    background-image: url('assets/Shading.png'); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center bottom; /* Fokus di bagian bawah dan tengah */
+    transform: translateX(0px) ;
+    animation: slideLeftToRight 1s ease-out 0.1s forwards; 
+    opacity: 0; /* Mulai dengan tersembunyi */
+}
+
+.hero-img {
+    background-image: url(assets/Masjid.png);
+    position: absolute; 
+    bottom: 0;
+    right: 0;
+    width: 1090px;
+    max-width: 100%;
+    height: 600px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 5;
+    transform: translateX(195px);
+    background-position: right bottom;
+    animation: slideRightToLeft 1s ease-out 0.5s forwards; 
+    opacity: 0;
+    /* background-position: center bottom; Fokus di bagian bawah dan tengah */
+}
+.hero-content {
+    /* Memberi jarak atas dan bawah untuk konten utama */
+    padding-top: 100px; 
+    padding-bottom: 50px;
+    
+    /* Membatasi lebar teks agar tidak terlalu memanjang */
+    max-width: 700px; 
+    
+    /* Agar teks dan ikon panah berada di lapisan atas (di atas ilustrasi) */
+    position: relative; 
+    z-index: 10; 
+}
+
+.hero-content h1 {
+    font-size: 3rem; /* Ukuran judul besar */
+    font-weight: 700;
+    color: rgb(0, 0, 0); /* Warna judul */
+    opacity: 0;
+    white-space: nowrap;
+    transform: translateY(300px);
+    animation: slideBottomToTop 1s ease-out 0.5s forwards;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-top: 20px;
+    /* Opasitas sedikit untuk kontras */
+    color: rgba(0, 0, 0, 0.9);
+    opacity: 0;
+    transform: translateY(100px);
+    animation: slideBottomToTop 1s ease-out 0.5s forwards;
+}
+
+.hero-content a {
+    font-size:larger !important;
+    font-weight: 700;
+    color: rgb(0, 0, 0) !important;
+    background-color: rgba(254, 254, 254, 0.333) !important;
+    border-color: #00000000 !important;
+    opacity: 0;
+    transform: translateY(105px) translateX(165px);
+    animation: fadeIn 1s ease-out 1.0s forwards;
+}
+
+.hero-content a:hover {
+    background-color: rgba(255, 255, 255, 0.62) !important;
+}
+
+.hero-visual {
+    background-image: url(assets/Keris1.png);
+    position: absolute; 
+    bottom: 0;
+    right: 0;
+    width: 567px;
+    height: 662px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 4;
+    transform: translateX(-200px) translateY(-165px);
+    animation: slideTopToBottom 1s ease-out 0.5s forwards; 
+    opacity: 0;
+}
+
+.navbar {
+    position: relative;
+    z-index: 1000;
+}
+
+.hero-shading, .hero-img, .hero-visual {
+    pointer-events: none;
+}
+
+.username-pill {
+    color: #000000;
+  background-color: rgba(255, 255, 255, 0.305);
+  padding: 6px 14px;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.username-pill img {
+  width: 28px;
+  margin-left: 10px;
+}
+
+.username-pill:hover {
+  background-color: rgba(255, 255, 255, 0.566); /* Putih agak transparan saat hover */
+}
+
+
+/* PENGATURAN UNTUK SETENGAH LAYAR */
+@media  (max-width: 991px) {
+    .navbar-nav {
+        margin: 0 !important;
+    }
+
+    .navbar .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    #navMenu {
+        padding: 10px 0;
+        border-radius: 10px 10px 10px 10px;
+    }
+
+    .navbar-brand {
+        display: flex;
+        align-items: center;
+    }
+
+    nav div ul li a {
+        display: block; 
+        margin-right: 0;
+        padding: 8px 15px;
+        text-align: left;
+        transform: translateX(0px);
+    }
+
+    .navbar-nav:last-child {
+        border-top: 1px solid rgba(255, 255, 255, 0.2); 
+        margin-top: 10px !important;
+        padding-top: 5px;
+    }
+
+    .hero-section {
+        flex-direction: column;
+        padding: 20px;
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .hero-content {
+        max-width: 100%;
+        padding-top: 50px;
+        padding-bottom: 20px;
+        z-index: 20;
+        text-align: center;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+        white-space: normal;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .hero-content a {
+        margin-top: 15px;
+        transform: translateY(105px) translateX(0px);
+    }
+
+    @keyframes slideBottomToTop {
+        100% {
+            transform: translateY(0px);
+            opacity: 1;
+        }
+    }
+}
+
+footer {
+    position: absolute;
+    height: 30px;
+    width: 100%;
+    bottom: 0px !important;
+    line-height: 30px;
+    background: rgba(0, 0, 0, 0.4) !important;
+    align-items: center !important;
+    background-position: bottom;
+    z-index: 9999;
+}
+
+/* --- KEYFRAMES ANIMASI --- */
+
+/* Animasi Masjid (Kanan ke Kiri) */
+@keyframes slideRightToLeft {
+    0% {
+        /* Mulai dari luar viewport di kanan */
+        transform: translateX(100%); 
+        opacity: 0;
+    }
+    100% {
+        /* Bergerak ke posisi akhir yang sudah didefinisikan di .hero-img */
+        transform: translateX(195px); /* Sesuaikan dengan nilai di .hero-img */
+        opacity: 1;
+    }
+}
+
+/* Animasi Shading (Kiri ke Kanan) */
+@keyframes slideLeftToRight {
+    0% {
+        /* Mulai dari luar viewport di kiri */
+        transform: translateX(-100%); 
+        opacity: 0;
+    }
+    100% {
+        /* Bergerak ke posisi akhir (0) */
+        transform: translateX(0px); /* Sesuaikan dengan nilai di .hero-shading */
+        opacity: 1;
+    }
+}
+
+/* Animasi Keris (Atas ke Bawah) */
+@keyframes slideTopToBottom {
+    0% {
+        /* Mulai dari luar viewport di atas */
+        transform: translateY(-100%) translateX(-25%); 
+        opacity: 0;
+    }
+    100% {
+        /* Bergerak ke posisi akhir yang sudah didefinisikan di .hero-visual */
+        transform: translateX(-200px) translateY(-165px); /* Sesuaikan dengan nilai di .hero-visual */
+        opacity: 1;
+    }
+}
+
+/* h1 */
+@keyframes slideBottomToTop {
+    0% {
+        /* Mulai dari luar viewport di atas */
+        transform: translateY(300px); 
+        opacity: 0;
+    }
+    100% {
+        /* Bergerak ke posisi akhir yang sudah didefinisikan di .hero-visual */
+        transform: translateX(0px) translateY(100px); /* Sesuaikan dengan nilai di .hero-visual */
+        opacity: 1;
+    }
+}
+
+/* p */
+@keyframes slideBottomToTop {
+    0% {
+        /* Mulai dari luar viewport di atas */
+        transform: translateY(300px); 
+        opacity: 0;
+    }
+    100% {
+        /* Bergerak ke posisi akhir yang sudah didefinisikan di .hero-visual */
+        transform: translateX(0px) translateY(100px); /* Sesuaikan dengan nilai di .hero-visual */
+        opacity: 1;
+    }
+}
+
+/* a */
+@keyframes fadeIn {
+    0% {
+        /* Status awal: tidak terlihat sama sekali */
+        opacity: 0;
+    }
+    100% {
+        /* Status akhir: terlihat sepenuhnya */
+        opacity: 1;
+    }
+}
+
+
+
