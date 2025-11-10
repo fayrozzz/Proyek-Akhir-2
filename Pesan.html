@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Checkout | Batik Tulis Sumenep</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(to bottom right, #93af7b, #f7eab1);
+      font-family: Arial, Helvetica, sans-serif;
+      color: #222;
+      min-height: 100vh;
+    }
+
+    body {
+    height: 100%;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s, color 0.3s;
+    overflow-x: hidden;
+}
+
+    .navbar-brand img{
+    margin-top: 0;
+    margin-bottom: 0;
+    height: 50px ;
+    padding: 0px !important;
+    margin: 0 auto !important;
+    width: auto ;
+    display: flex ;
+    object-fit: contain ;
+    vertical-align: middle ;
+    align-items: center;
+}
+
+/* NAVBAR */
+.navbar {
+    background: #587042!important;
+    width: 100%;
+    display: flex;
+    margin: 0 auto !important;
+    align-items: center;
+    padding: 0;
+}
+
+nav div ul li a {
+    transition: 0.10s;
+    display: inline-block;
+    margin-right: 10px ;
+    border-radius: 50px ;
+    color: #000000 !important;
+    transform: translateX(-25px);
+
+}
+
+nav div ul li a:hover {
+    background: #ffffff72 ;
+    border-radius: 10px ;
+}
+
+.username-pill {
+    color: #000000;
+  background-color: rgba(255, 255, 255, 0.305);
+  padding: 6px 14px;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.username-pill img {
+  width: 28px;
+  margin-left: 10px;
+}
+
+.username-pill:hover {
+  background-color: rgba(255, 255, 255, 0.566); /* Putih agak transparan saat hover */
+}
+
+
+    .checkout-card {
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .btn-confirm {
+      background-color: #7fae53;
+      border: none;
+      border-radius: 10px;
+      padding: 10px 20px;
+      font-weight: bold;
+    }
+
+    .btn-confirm:hover {
+      background-color: #a2c97a;
+    }
+
+footer {
+    position: absolute;
+    height: 30px;
+    width: 100%;
+    bottom: 0px !important;
+    line-height: 30px;
+    background: rgba(0, 0, 0, 0.4) !important;
+    align-items: center !important;
+    background-position: bottom;
+    z-index: 9999;
+}
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR 1-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <!--LOGO-->
+      <a class="navlogo navbar-brand fw-bold logo " href="Home.html">
+        <img src="assets/lokalsumenep.png" alt="LokalSumenep.id">
+      </a>
+
+      <!--HUMBERGER ICON-->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      
+      <div class="collapse navbar-collapse" id="navMenu">
+        <!--Navbar Button Center-->
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item"><a class="nav-link" href="Product.html">Product</a></li>
+            <li class="nav-item"><a class="nav-link" href="About.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="Contact.html">Contact</a></li>
+          </ul>
+          <!-- Navbar Button Right -->
+          <div class="username-pill d-flex align-items-center">
+            <span>Username</span>
+            <img src="assets/Profil.png" alt="User Icon">
+          </div>
+      </div>
+    </div>
+</nav>
+
+
+  <!-- Checkout Content -->
+  <div class="container py-5">
+    <div class="checkout-card">
+      <div class="row">
+        <!-- Formulir Pemesanan -->
+        <div class="col-md-7">
+          <h3 class="fw-bold mb-4">Checkout Pemesanan</h3>
+          <form>
+            <div class="mb-3">
+              <label class="form-label">Nama Lengkap</label>
+              <input type="text" class="form-control" placeholder="Masukkan nama lengkap" required>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Alamat Lengkap</label>
+              <textarea class="form-control" rows="3" placeholder="Masukkan alamat lengkap pengiriman" required></textarea>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Nomor Telepon / WhatsApp</label>
+              <input type="tel" class="form-control" placeholder="08xxxxxxxxxx" required>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Ukuran</label>
+                <select class="form-select" required>
+                  <option value="">Pilih ukuran</option>
+                  <option>S</option>
+                  <option>M</option>
+                  <option>L</option>
+                  <option>XL</option>
+                  <option>XXL</option>
+                </select>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Jumlah</label>
+                <input type="number" class="form-control" min="1" value="1" required>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Metode Pembayaran</label>
+              <select class="form-select" required>
+                <option value="">Pilih metode</option>
+                <option>Transfer Bank</option>
+                <option>COD (Bayar di Tempat)</option>
+                <option>E-Wallet (Dana, OVO, Gopay)</option>
+              </select>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Catatan Tambahan</label>
+              <textarea class="form-control" rows="2" placeholder="Contoh: kirim sebagai hadiah, warna dominan merah, dll"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-confirm w-100">Konfirmasi Pesanan</button>
+          </form>
+        </div>
+
+        <!-- Ringkasan Pesanan -->
+        <div class="col-md-5 mt-4 mt-md-0">
+          <div class="card shadow-sm">
+            <img src="assets/batik.png" class="card-img-top" alt="Batik Tulis Sumenep">
+            <div class="card-body">
+              <h5 class="card-title fw-bold">Batik Tulis Sumenep</h5>
+              <p class="mb-1">Jenis: Batik Tulis Tradisional</p>
+              <p class="mb-1">Ukuran: <span id="size-preview">M</span></p>
+              <hr>
+              <p class="fw-bold mb-1">Harga Satuan: Rp 450.000</p>
+              <p class="fw-bold">Total: Rp <span id="total">450.000</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<footer class="text-white text-center">
+  <p>© 2025 LokalSumenep.id</p>
+</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
