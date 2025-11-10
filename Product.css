@@ -83,26 +83,6 @@ main {
     background-position: center bottom; */
 }
 
-.hero-shading {
-    position: absolute; /* Posisikan secara bebas terhadap .hero-section */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    
-    /* Menjadikan ilustrasi transparan dan di belakang teks */
-    z-index: 6; /* Pastikan di bawah .hero-content */
-    
-    /* Mengatur background image yang berisi ilustrasi */
-    background-image: url('assets/Shading.png'); 
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center bottom; /* Fokus di bagian bawah dan tengah */
-    transform: translateX(0px) ;
-    animation: slideLeftToRight 1s ease-out 0.1s forwards; 
-    opacity: 0; /* Mulai dengan tersembunyi */
-}
-
 .hero-img {
     background-image: url(assets/Masjid2.png);
     position: absolute; 
@@ -169,21 +149,6 @@ main {
     background-color: rgba(255, 255, 255, 0.62) !important;
 }
 
-.hero-visual {
-    background-image: url(assets/Keris1.png);
-    position: absolute; 
-    bottom: 0;
-    right: 0;
-    width: 567px;
-    height: 662px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    z-index: 4;
-    transform: translateX(-200px) translateY(-165px);
-    animation: slideTopToBottom 1s ease-out 0.5s forwards; 
-    opacity: 0;
-}
-
 .navbar {
     position: relative;
     z-index: 1000;
@@ -213,102 +178,67 @@ main {
 }
 
 /* PRODUCT */
-
-/* Kotak besar transparan */
-.hero-box-wrapper {
+/* PRODUCT SLIDER BARU */
+.product-slider-wrapper {
   position: absolute;
-  top: 50%;
+  top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 100%;
-  height: 400px;
-  background: transparent; /* transparan penuh */
+  width: 90%;
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 10;
+  z-index: 20;
 }
 
-/* Container scrollable berisi kotak-kotak kecil */
-.hero-box-container {
+.product-slider {
+  width: 100%;
+  overflow: hidden;
+}
+
+.product-track {
   display: flex;
   gap: 20px;
-  transition: transform 0.2s linear;
-  will-change: transform;
-  width: max-content; /* ✅ biar lebar ngikut isi, bukan layar */
+  transition: transform 0.4s ease;
 }
 
-.hero-box-container::-webkit-scrollbar {
-  display: none; /* sembunyikan scrollbar (Chrome, Safari) */
-}
-
-/* Kotak kecil transparan */
-.small-box {
-  flex: 0 0 200px;
-  height: 200px;
+.product-item {
+  flex: 0 0 180px;
+  height: 180px;
   border-radius: 15px;
-  background: rgba(255, 255, 255, 0.2);
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background: rgba(255,255,255,0.25);
+  backdrop-filter: blur(6px);
 }
 
-.small-box img {
+.product-item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 15px;
 }
 
-.small-box:hover {
-  background: rgba(255, 255, 255, 0.55);
-  transform: scale(1.05);
+/* TOMBOL ARROW */
+
+.arrow:hover {
+  background: rgba(255,255,255,0.7);
 }
 
-/* Tombol panah kiri dan kanan */
-.scroll-btn {
-  background: rgba(255, 255, 255, 0.35);
-  border: none;
-  border-radius: 50%;
-  width: 45px;
-  height: 45px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
+.arrow.left {
   position: absolute;
-  font-size: 1.5rem;
-  color: #000;
-  z-index: 20;
-  transition: 0.3s;
-}
-.scroll-btn:hover {
-  background: rgba(255, 255, 255, 0.6);
-}
-.scroll-btn.left {
-  left: 40px;
-}
-.scroll-btn.right {
-  right: 40px;
+  left: 0;
 }
 
-/* Container slider */
-.hero-slider-container {
-  position: relative;
-  width: 100%;
-  overflow: visible; /* ✅ biarin kontainer di dalamnya bisa geser */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: transparent;
+.arrow.right {
+  position: absolute;
+  right: 0;
 }
 
-
-/* Animasi bergerak pelan ke kiri */
-@keyframes slideLoop {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+/* RESPONSIVE */
+@media(max-width: 768px){
+  .product-item {
+    flex: 0 0 140px;
+    height: 140px;
+  }
 }
 
 /* Tombol panah kiri & kanan */
@@ -334,34 +264,15 @@ main {
 
 
 /* posisi product */
-.small-box {
-  flex: 0 0 250px;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.35);
-  border-radius: 10px;
-  backdrop-filter: blur(4px);
-  overflow: hidden; /* biar gambar gak keluar batas */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: 0.3s ease;
-}
 
-.small-box img {
+.product-item img {
   width: 100%;
   height: 100%;
   object-fit: cover; /* gambar memenuhi kotak tanpa distorsi */
   border-radius: 10px;
 }
 
-.hero-box-container {
-  display: flex;
-  gap: 20px;
-  transition: transform 0.3s ease;
-  will-change: transform;
-}
-
-.small-box {
+.product-item {
   flex: 0 0 200px; /* lebar fix */
   height: 200px;   /* tinggi fix */
   background: rgba(255, 255, 255, 0.1);
@@ -372,12 +283,17 @@ main {
   overflow: hidden;
 }
 
-.small-box img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* biar proporsional tapi pas di kotak */
-  border-radius: 10px;
+.product-item {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
 }
+
+.product-item:hover {
+  transform: scale(1.08);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+}
+
+
 
 
 /* PENGATURAN UNTUK SETENGAH LAYAR */
@@ -487,21 +403,7 @@ footer {
     }
 }
 
-/* Animasi Shading (Kiri ke Kanan) */
-@keyframes slideLeftToRight {
-    0% {
-        /* Mulai dari luar viewport di kiri */
-        transform: translateX(-100%); 
-        opacity: 0;
-    }
-    100% {
-        /* Bergerak ke posisi akhir (0) */
-        transform: translateX(0px); /* Sesuaikan dengan nilai di .hero-shading */
-        opacity: 1;
-    }
-}
-
-/* Animasi Keris (Atas ke Bawah) */
+/* Animasi h1 (Atas ke Bawah) */
 @keyframes slideTopToBottom {
     0% {
         /* Mulai dari luar viewport di atas */
@@ -511,19 +413,6 @@ footer {
     100% {
         /* Bergerak ke posisi akhir yang sudah didefinisikan di .hero-visual */
         transform: translateY(-100px) translateX(60px); /* Sesuaikan dengan nilai di .hero-visual */
-        opacity: 1;
-    }
-}
-
-
-/* a */
-@keyframes fadeIn {
-    0% {
-        /* Status awal: tidak terlihat sama sekali */
-        opacity: 0;
-    }
-    100% {
-        /* Status akhir: terlihat sepenuhnya */
         opacity: 1;
     }
 }
