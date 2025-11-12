@@ -19,6 +19,7 @@ body {
 .context {
     align-items: center !important;
 }
+
 /* LOGO */
 .navbar-brand img{
     margin-top: 0;
@@ -31,25 +32,6 @@ body {
     object-fit: contain ;
     vertical-align: middle ;
     align-items: center;
-}
-
-.username-pill {
-    color: #000000;
-  background-color: rgba(255, 255, 255, 0.305);
-  padding: 6px 14px;
-  border-radius: 30px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.username-pill img {
-  width: 28px;
-  margin-left: 10px;
-}
-
-.username-pill:hover {
-  background-color: rgba(255, 255, 255, 0.566); /* Putih agak transparan saat hover */
 }
 
 /* NAVBAR */
@@ -75,6 +57,25 @@ nav div ul li a {
 nav div ul li a:hover {
     background: #ffffff72 ;
     border-radius: 10px ;
+}
+
+.username-pill {
+    color: #000000;
+  background-color: rgba(255, 255, 255, 0.305);
+  padding: 6px 14px;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.username-pill img {
+  width: 28px;
+  margin-left: 10px;
+}
+
+.username-pill:hover {
+  background-color: rgba(255, 255, 255, 0.566); /* Putih agak transparan saat hover */
 }
 
 /* BODY */
